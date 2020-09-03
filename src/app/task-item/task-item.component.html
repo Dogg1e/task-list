@@ -1,0 +1,8 @@
+<li>
+  <div><h3>{{ task.title }}</h3></div>
+  <div>{{ task.description }}</div>
+  <div>{{ task.date | date:'dd.MM.yyyy'}}</div>
+  <button>Remove</button>
+  <button (click)="edit(task.id)">Edit</button>
+</li>
+<hr>
