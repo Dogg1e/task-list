@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import * as moment from 'moment';
 
 export interface Task {
   id: string;
@@ -57,20 +58,30 @@ export class AppComponent implements OnInit {
           id,
           title: value.title,
           description: value.description,
-          date: new Date(value.date)
+          date: new Date(value.date),
         };
       }
     });
     this.editTaskForm = new FormGroup({
       title: new FormControl(this.editTask.title, Validators.required),
       description: new FormControl(this.editTask.description, Validators.required),
-      date: new FormControl(this.editTask.date, Validators.required)
+      date: new FormControl(moment(this.editTask.date).format('YYYY-MM-DD'), Validators.required)
     });
   }
 
   submitEdit(): void {
-    const {id, title, description, date} = this.editTask;
-    console.log(title);
+    const { id } = this.editTask;
+    const { title, description, date} = this.editTaskForm.value;
+    this.tasks.map((el) => {
+      if (el.id === id){
+        el.title = title;
+        el.description = description;
+        el.date = date;
+      }
+    });
+    console.log(this.tasks);
+    this.editTaskMode = false;
+    this.editTaskForm.reset();
 
   }
 

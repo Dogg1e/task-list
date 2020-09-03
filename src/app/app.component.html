@@ -16,7 +16,7 @@
 
       <input type="text" placeholder="title" formControlName="title" >
       <textarea maxlength="100" placeholder="description" formControlName="description"></textarea>
-      <input type="date" [value]="editTask.date | date: 'yyyy-MM-dd'" formControlName="date">
+      <input type="date" formControlName="date">
 
       <button [disabled]="editTaskForm.invalid" class="btn">Save</button>
     </div>

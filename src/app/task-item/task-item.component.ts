@@ -11,6 +11,8 @@ export class TaskItemComponent implements OnInit {
   @Input() task: Task;
   @Output() onEdit = new EventEmitter<string>();
 
+  full: boolean;
+
   ngOnInit(): void {
   }
 
@@ -19,4 +21,7 @@ export class TaskItemComponent implements OnInit {
     console.log(id);
   }
 
+  toggleFull(): void {
+    this.full = !this.full;
+  }
 }

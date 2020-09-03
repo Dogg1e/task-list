@@ -1,8 +1,13 @@
 <li>
-  <div><h3>{{ task.title }}</h3></div>
-  <div>{{ task.description }}</div>
-  <div>{{ task.date | date:'dd.MM.yyyy'}}</div>
+  <div>
+  <h3>{{ task.title }}</h3>
+  <p >{{ task.date | date:'dd.MM.yyyy'}}</p>
+  <p *ngIf="full">{{ task.description }}</p>
+    </div>
+  <div>
+  <button (click)="toggleFull()">Open</button>
   <button>Remove</button>
+  </div>
   <button (click)="edit(task.id)">Edit</button>
 </li>
 <hr>

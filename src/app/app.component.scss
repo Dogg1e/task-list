@@ -23,7 +23,7 @@ input {
 }
 
 textarea {
-  display: block;
+  //display: block;
   width: 100%;
   padding: .4rem;
   font-family: inherit;
@@ -41,7 +41,9 @@ textarea {
 
 
 .btn {
-    display: inline-block;
+    font-family: inherit;
+    display: block;
+    width: 100%;
     background: #108d1b;
     color: #ffffff;
     padding: .4rem 1.3rem;
@@ -49,8 +51,8 @@ textarea {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: .5rem;
-    transition:  opacity .2s;
+    //margin-right: .5rem;
+    //transition:  opacity .2s;
     outline: none;
 
     &:disabled{

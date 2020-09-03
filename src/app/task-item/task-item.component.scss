@@ -7,9 +7,17 @@ li{
   padding: 1em;
   margin: 1em auto;
   color: #666666;
-
 }
 
 li button {
   float: right;
+  font-family: inherit;
+  font-size: 1rem;
+  display: block;
+  background: #0066ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+
 }
+
