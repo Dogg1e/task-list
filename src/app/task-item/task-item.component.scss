@@ -1,23 +1,98 @@
+li {
 
-li{
   text-align: left;
   list-style-type: none;
   background: #fff;
-  border-left: 4px solid #399724;
+  border-left: 10px solid #399724;
   padding: 1em;
   margin: 1em auto;
   color: #666666;
+  h3 {
+     border-bottom: 1px solid #9a9a9a;
+    width: 30%;
+  }
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+
+    .open {
+      width: 100px;
+      button {
+        padding: .4rem 1.3rem;
+        font-family: inherit;
+        font-size: 1rem;
+        display: block;
+        background: #0066ff;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        &:hover {
+          opacity: .8;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+    }
+
+    .other {
+      .editBtn {
+        background: yellowgreen;
+      }
+      width: 100px;
+      button{
+        padding: .4rem 1.3rem;
+        font-family: inherit;
+        font-size: 1rem;
+        display: block;
+        background: red;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        &:disabled{
+          background: #545454;
+          color: #fff;
+          cursor: not-allowed;
+        }
+        &:hover:not(:disabled) {
+          opacity: .8;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    .moveBtn {
+      width: 50px;
+      button {
+        padding: .4rem 1.3rem;
+        font-family: inherit;
+        font-size: 1rem;
+        display: block;
+        background: #545454;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        &:disabled{
+          background: #545454;
+          color: #fff;
+          cursor: not-allowed;
+        }
+        &:hover:not(:disabled) {
+          opacity: .8;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+
 }
-
-li button {
-  float: right;
-  font-family: inherit;
-  font-size: 1rem;
-  display: block;
-  background: #0066ff;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-
-}
-

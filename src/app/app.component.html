@@ -19,12 +19,16 @@
       <input type="date" formControlName="date">
 
       <button [disabled]="editTaskForm.invalid" class="btn">Save</button>
+
     </div>
   </form>
   <ul>
     <app-task-item *ngFor="let task of tasks"
                    [task]="task"
                    (onEdit)="onEdit($event)"
+                   (onClose)="onClose($event)"
+                   (onDown)="onDown($event)"
+                   (onUp)="onUp($event)"
     ></app-task-item>
   </ul>
 

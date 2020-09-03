@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import * as moment from 'moment';
 
@@ -18,11 +18,14 @@ export interface Task {
 
 export class AppComponent implements OnInit {
 
-  @Input('FormControl')
   editTaskMode = false;
   editTask: Task;
 
-  tasks = [{id: 't1t1t1', title: 'First task', description: 'task description', date: new Date()}];
+  tasks = [
+    {id: 't1t1t1', title: 'First task', description: 'task description', date: new Date()},
+    {id: 't2t2t2', title: 'Second task', description: 'task description', date: new Date()},
+    {id: 't3t3t3', title: 'Thirty task', description: 'task description', date: new Date()}
+    ];
 
   addTaskform: FormGroup;
   editTaskForm: FormGroup;
@@ -51,7 +54,7 @@ export class AppComponent implements OnInit {
 
   onEdit(id: string): void{
     this.editTaskMode = true;
-    this.tasks.forEach((value, index) => {
+    this.tasks.forEach((value) => {
       if (value.id === id)
       {
         this.editTask = {
@@ -68,6 +71,9 @@ export class AppComponent implements OnInit {
       date: new FormControl(moment(this.editTask.date).format('YYYY-MM-DD'), Validators.required)
     });
   }
+  onClose(id: string): void {
+    this.tasks = this.tasks.filter(value => value.id !== id);
+  }
 
   submitEdit(): void {
     const { id } = this.editTask;
@@ -79,10 +85,30 @@ export class AppComponent implements OnInit {
         el.date = date;
       }
     });
-    console.log(this.tasks);
     this.editTaskMode = false;
     this.editTaskForm.reset();
 
+  }
+
+  onDown(id: string): void {
+    const array = this.tasks.slice();
+    array.forEach((el, index) => {
+      if (el.id === id) {
+        this.tasks.splice(index, 1);
+        this.tasks.splice(++index, 0, el);
+      }
+    });
+    console.log(this.tasks);
+  }
+  onUp(id: string): void {
+    const array = this.tasks.slice();
+    array.forEach((el, index) => {
+      if (el.id === id) {
+        this.tasks.splice(index, 1);
+        this.tasks.splice(--index, 0, el);
+      }
+    });
+    console.log(this.tasks);
   }
 
 

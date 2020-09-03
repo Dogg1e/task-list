@@ -2,28 +2,14 @@
 
 .container{
   text-align: center;
-}
-
-
-input {
   display: block;
-  width: 100%;
-  padding: .4rem;
-  font-family: inherit;
-  font-size: 1.2rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  margin-bottom: .5rem;
-
-  &:focus{
-    box-shadow: 0 0 5px #545454;
-
-  }
+  box-sizing: content-box;
 }
 
-textarea {
-  //display: block;
+
+input, textarea{
+  display: block;
+  box-sizing: border-box;
   width: 100%;
   padding: .4rem;
   font-family: inherit;
@@ -33,12 +19,11 @@ textarea {
   outline: none;
   margin-bottom: .5rem;
   resize: none;
-
   &:focus{
     box-shadow: 0 0 5px #545454;
+
   }
 }
-
 
 .btn {
     font-family: inherit;
@@ -51,8 +36,6 @@ textarea {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    //margin-right: .5rem;
-    //transition:  opacity .2s;
     outline: none;
 
     &:disabled{
