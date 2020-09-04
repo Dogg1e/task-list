@@ -1,5 +1,7 @@
-<li [style]="getStyle( task.date )"
->
+<li
+  [class.green]="taskColor === 'green'"
+  [class.yellow]="taskColor === 'yellow'"
+  [class.red]="taskColor === 'red'">
   <div>
     <h3 >{{ task.title }}</h3>
     <p>{{ task.date | date:'dd.MM.yyyy'}}</p>
@@ -10,12 +12,12 @@
       <button (click)="toggleFull()">Open</button>
     </div>
     <div class="moveBtn">
-      <button (click)="up(task.id)">&#11014;</button>
-      <button (click)="down(task.id)">&#11015;</button>
+      <button (click)="onUp(task.id)">&#11014;</button>
+      <button (click)="onDown(task.id)">&#11015;</button>
     </div>
     <div class="other">
-      <button class="editBtn" (click)="edit(task.id)">&#9998; Edit</button>
-      <button (click)="close(task.id)">&#10004; Close</button>
+      <button class="editBtn" (click)="onEdit(task.id)">&#9998; Edit</button>
+      <button (click)="onClose(task.id)">&#10004; Close</button>
     </div>
   </div>
 

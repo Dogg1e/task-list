@@ -1,16 +1,30 @@
 li {
 
+    &.green {
+      border-left: 10px solid green;
+    }
+    &.yellow {
+      border-left: 10px solid yellow;
+    }
+    &.red {
+      border-left: 10px solid red;
+    }
+
+
+
   text-align: left;
   list-style-type: none;
   background: #fff;
-  border-left: 10px solid #399724;
+
   padding: 1em;
   margin: 1em auto;
   color: #666666;
+
   h3 {
-     border-bottom: 1px solid #9a9a9a;
+    border-bottom: 1px solid #9a9a9a;
     width: 30%;
   }
+
   .btns {
     display: flex;
     justify-content: space-between;
@@ -18,6 +32,7 @@ li {
 
     .open {
       width: 100px;
+
       button {
         padding: .4rem 1.3rem;
         font-family: inherit;
@@ -30,6 +45,7 @@ li {
         width: 100%;
         cursor: pointer;
         outline: none;
+
         &:hover {
           opacity: .8;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -42,8 +58,10 @@ li {
       .editBtn {
         background: yellowgreen;
       }
+
       width: 100px;
-      button{
+
+      button {
         padding: .4rem 1.3rem;
         font-family: inherit;
         font-size: 1rem;
@@ -56,19 +74,23 @@ li {
         width: 100%;
         cursor: pointer;
         outline: none;
-        &:disabled{
+
+        &:disabled {
           background: #545454;
           color: #fff;
           cursor: not-allowed;
         }
+
         &:hover:not(:disabled) {
           opacity: .8;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
       }
     }
+
     .moveBtn {
       width: 50px;
+
       button {
         padding: .4rem 1.3rem;
         font-family: inherit;
@@ -82,11 +104,13 @@ li {
         width: 100%;
         cursor: pointer;
         outline: none;
-        &:disabled{
+
+        &:disabled {
           background: #545454;
           color: #fff;
           cursor: not-allowed;
         }
+
         &:hover:not(:disabled) {
           opacity: .8;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);

@@ -6,7 +6,7 @@ export interface Task {
   id: string;
   title: string;
   description: string;
-  date: Date;
+  date: any;
 }
 
 @Component({
@@ -22,9 +22,10 @@ export class AppComponent implements OnInit {
   editTask: Task;
 
   tasks = [
-    {id: 't1t1t1', title: 'First task', description: 'task description', date: new Date()},
-    {id: 't2t2t2', title: 'Second task', description: 'task description', date: new Date()},
-    {id: 't3t3t3', title: 'Thirty task', description: 'task description', date: new Date()}
+    {id: 't1t1t1', title: 'First task', description: 'task description', date: moment().add(2, 'day').format('yyyy-MM-DD')},
+    {id: 't2t2t2', title: 'Second task', description: 'task description', date: moment().subtract(1, 'day').format('yyyy-MM-DD')},
+    {id: 't3t3t3', title: 'Thirty task', description: 'task description', date: moment().add(1, 'day').format('yyyy-MM-DD')},
+    {id: 't4t4t4', title: 'Four task', description: 'task description', date: moment().add(4, 'day').format('yyyy-MM-DD')},
     ];
 
   addTaskform: FormGroup;
@@ -98,7 +99,6 @@ export class AppComponent implements OnInit {
         this.tasks.splice(++index, 0, el);
       }
     });
-    console.log(this.tasks);
   }
   onUp(id: string): void {
     const array = this.tasks.slice();
@@ -108,7 +108,6 @@ export class AppComponent implements OnInit {
         this.tasks.splice(--index, 0, el);
       }
     });
-    console.log(this.tasks);
   }
 
 

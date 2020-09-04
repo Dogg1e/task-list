@@ -1,34 +1,35 @@
 <div class="container">
   <form *ngIf="!editTaskMode" (ngSubmit)="submitAdd()" [formGroup]="addTaskform">
-    <div class="form-group">
+
       <h1>Task List</h1>
+      <h2>Add</h2>
 
         <input type="text" placeholder="title" formControlName="title">
         <textarea maxlength="10" placeholder="description" formControlName="description"></textarea>
         <input type="date" formControlName="date">
 
       <button class="btn" [disabled]="addTaskform.invalid">{{editTaskMode ? "Save" : "Add" }}</button>
-    </div>
+
   </form>
   <form *ngIf="editTaskMode" (ngSubmit)="submitEdit()" [formGroup]="editTaskForm">
-    <div class="form-group">
-      <h1>Task List</h1>
 
+      <h1>Task List</h1>
+      <h2>Edit</h2>
       <input type="text" placeholder="title" formControlName="title" >
       <textarea maxlength="100" placeholder="description" formControlName="description"></textarea>
       <input type="date" formControlName="date">
 
       <button [disabled]="editTaskForm.invalid" class="btn">Save</button>
 
-    </div>
+
   </form>
   <ul>
     <app-task-item *ngFor="let task of tasks"
                    [task]="task"
-                   (onEdit)="onEdit($event)"
-                   (onClose)="onClose($event)"
-                   (onDown)="onDown($event)"
-                   (onUp)="onUp($event)"
+                   (edit)="onEdit($event)"
+                   (closeTask)="onClose($event)"
+                   (down)="onDown($event)"
+                   (up)="onUp($event)"
     ></app-task-item>
   </ul>
 
